@@ -20,6 +20,7 @@
     <p><code>docker run -p 8080:8080 sha256:"image id"</code></p>
     <li>образ контейнеру залитий на docker hub.</li>
     <p><code>docker tag "image id" dkulikov/demo:v1.0.0</code></p>
+    <p><code>docker build . -t dkulikov/demo:v1.0.1</code></p>
     <p><code>docker push dkulikov/demo:v1.0.0</code></p>
 </ul>
 
@@ -31,4 +32,7 @@
     <p><code>kubectl create deploy demo dkulikov/demo:v1.0.0</code></p>
     <p><code>kubectl port-forward deploy/demo 8080</code></p>
     <li>сервіс працює.</li>
+    <p><code>kubectl get po -w</code> <small>поточний стан на кластері</small></p>
+    <p><code>kubectl get deploy demo -o wide</code></p>
+     <p><code>kubectl set image deploy demo "container name"=dkulikov/demo:v1.0.1</code> <small>оновлення версії</small></p>
 </ul>
